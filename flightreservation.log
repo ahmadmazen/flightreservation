@@ -1,0 +1,55 @@
+2019-08-20 19:52:47.591  INFO 11360 --- [main] c.m.f.FlightreservationApplication       : Starting FlightreservationApplication on Ahmed-Mazen with PID 11360 (C:\Dev\flightreservation\target\classes started by Asus in C:\Dev\flightreservation)
+2019-08-20 19:52:47.594  INFO 11360 --- [main] c.m.f.FlightreservationApplication       : No active profile set, falling back to default profiles: default
+2019-08-20 19:52:47.633  INFO 11360 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7d68ef40: startup date [Tue Aug 20 19:52:47 AST 2019]; root of context hierarchy
+2019-08-20 19:52:48.420  INFO 11360 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c515ffb2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-20 19:52:48.667  INFO 11360 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8088 (http)
+2019-08-20 19:52:48.695  INFO 11360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-20 19:52:48.695  INFO 11360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.40
+2019-08-20 19:52:48.867  INFO 11360 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-20 19:52:48.873  INFO 11360 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/flightreservation]       : Initializing Spring embedded WebApplicationContext
+2019-08-20 19:52:48.874  INFO 11360 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1244 ms
+2019-08-20 19:52:49.000  INFO 11360 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-08-20 19:52:49.003  INFO 11360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-20 19:52:49.003  INFO 11360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-20 19:52:49.003  INFO 11360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-20 19:52:49.003  INFO 11360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-20 19:52:50.448  INFO 11360 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-08-20 19:52:50.461  INFO 11360 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-20 19:52:50.531  INFO 11360 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2019-08-20 19:52:50.533  INFO 11360 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-08-20 19:52:50.535  INFO 11360 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2019-08-20 19:52:50.582  INFO 11360 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-08-20 19:52:50.673  INFO 11360 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-08-20 19:52:51.160  INFO 11360 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-20 19:52:51.376  INFO 11360 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-08-20 19:52:51.813  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7d68ef40: startup date [Tue Aug 20 19:52:47 AST 2019]; root of context hierarchy
+2019-08-20 19:52:51.877  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/showFindFlights]}" onto public java.lang.String com.mazen.flightreservation.controllers.FlightController.showFindFlightsPage()
+2019-08-20 19:52:51.879  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/findFlights]}" onto public java.lang.String com.mazen.flightreservation.controllers.FlightController.findFlight(java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.ModelMap)
+2019-08-20 19:52:51.880  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/completeReservation],methods=[POST]}" onto public java.lang.String com.mazen.flightreservation.controllers.ReservationController.completeReservation(com.mazen.flightreservation.dto.ReservationRequest,org.springframework.ui.ModelMap)
+2019-08-20 19:52:51.880  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/showCompleteReservation]}" onto public java.lang.String com.mazen.flightreservation.controllers.ReservationController.showCompleteReservation(java.lang.Long,org.springframework.ui.ModelMap)
+2019-08-20 19:52:51.881  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/reservations]}" onto public com.mazen.flightreservation.entities.Reservation com.mazen.flightreservation.controllers.ReservationRestController.updateReservation(com.mazen.flightreservation.dto.ReservationUpdateRequest)
+2019-08-20 19:52:51.881  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/reservations/{id}]}" onto public com.mazen.flightreservation.entities.Reservation com.mazen.flightreservation.controllers.ReservationRestController.findReservation(java.lang.Long)
+2019-08-20 19:52:51.882  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/registerUser],methods=[POST]}" onto public java.lang.String com.mazen.flightreservation.controllers.UserController.register(com.mazen.flightreservation.entities.User)
+2019-08-20 19:52:51.883  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/showReg]}" onto public java.lang.String com.mazen.flightreservation.controllers.UserController.showRegistrationPage()
+2019-08-20 19:52:51.883  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.mazen.flightreservation.controllers.UserController.login(java.lang.String,java.lang.String,org.springframework.ui.ModelMap)
+2019-08-20 19:52:51.883  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login]}" onto public java.lang.String com.mazen.flightreservation.controllers.UserController.showLoginPage()
+2019-08-20 19:52:51.886  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-20 19:52:51.886  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-20 19:52:51.916  INFO 11360 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-20 19:52:51.916  INFO 11360 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-20 19:52:51.955  INFO 11360 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-20 19:52:51.982  INFO 11360 --- [main] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: ServletContext resource [/index.html]
+2019-08-20 19:52:52.240  INFO 11360 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-08-20 19:52:52.290  INFO 11360 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8088 (http)
+2019-08-20 19:52:52.295  INFO 11360 --- [main] c.m.f.FlightreservationApplication       : Started FlightreservationApplication in 4.932 seconds (JVM running for 6.024)
+2019-08-20 19:53:06.062  INFO 11360 --- [http-nio-8088-exec-1] o.a.c.c.C.[.[.[/flightreservation]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-08-20 19:53:06.063  INFO 11360 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-08-20 19:53:06.080  INFO 11360 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+2019-08-20 19:53:06.103  INFO 11360 --- [http-nio-8088-exec-1] c.m.f.controllers.UserController         : showLoginPage() 
+2019-08-20 19:53:11.563  INFO 11360 --- [http-nio-8088-exec-3] c.m.f.controllers.UserController         : inside Login() -- email : ahmed.mazen87@yahoo.com
+2019-08-20 19:55:07.723  INFO 11360 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-08-20 19:55:07.723  INFO 11360 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7d68ef40: startup date [Tue Aug 20 19:52:47 AST 2019]; root of context hierarchy
+2019-08-20 19:55:07.725  INFO 11360 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2019-08-20 19:55:07.726  INFO 11360 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
