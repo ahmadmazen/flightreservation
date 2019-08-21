@@ -3,9 +3,9 @@ package com.mazen.flightreservation.services;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.mazen.flightreservation.controllers.ReservationController;
 import com.mazen.flightreservation.dto.ReservationRequest;
 import com.mazen.flightreservation.entities.Flight;
 import com.mazen.flightreservation.entities.Passenger;
@@ -19,6 +19,8 @@ import com.mazen.flightreservation.util.PDFGenerator;
 @Service
 public class ReservationServiceImpl implements ReservationService {
 
+	@Value("${com.mazen.flightreservation.itinerary.dirpath}")
+	private String ITINERARY_DIR;
 	@Autowired
 	FlightRepository flightRepository;
 	@Autowired
@@ -60,7 +62,7 @@ public class ReservationServiceImpl implements ReservationService {
 		LOGGER.info("Saving the reservation : " + savedReservation);
 
 
-		String filePath = "C:\\Users\\Asus\\Documents\\reservations\\" + savedReservation.getId() + ".pdf";
+		String filePath = ITINERARY_DIR + savedReservation.getId() + ".pdf";
 		pdfGenerator.generateItinerary(savedReservation, filePath);
 		
 		LOGGER.info("Generating the Itinerary");

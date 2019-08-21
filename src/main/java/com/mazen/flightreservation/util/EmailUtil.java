@@ -8,11 +8,10 @@ import javax.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
-
-import com.mazen.flightreservation.services.ReservationServiceImpl;
 
 
 
@@ -21,6 +20,11 @@ public class EmailUtil {
 	
 	@Autowired
 	private JavaMailSender sender;
+	
+	@Value("${com.mazen.flightreservation.itinerary.email.subject}")
+	private String EMAIL_SUBJECT;
+	@Value("${com.mazen.flightreservation.itinerary.email.body}")
+	private String EMAIL_BODY;
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(EmailUtil.class);
 
@@ -34,8 +38,8 @@ public class EmailUtil {
        try {
 			MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(message, true);
 			mimeMessageHelper.setTo(toAddress);
-			mimeMessageHelper.setSubject("Itinerary for your Flight");
-			mimeMessageHelper.setText("Please find your Itinerary attached.");
+			mimeMessageHelper.setSubject(EMAIL_SUBJECT);
+			mimeMessageHelper.setText(EMAIL_BODY);
 			mimeMessageHelper.addAttachment("Itinerary", new File(filePath));
 			sender.send(message);
 			
