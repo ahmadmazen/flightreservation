@@ -48,6 +48,11 @@ public class FlightController {
 
 	}
 	
-	
+	@RequestMapping("admin/showAddFlight")
+	public String showAddFlight() {
+		
+		
+		return "addFlight";
+	}
 	
 }

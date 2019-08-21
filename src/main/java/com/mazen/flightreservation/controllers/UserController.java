@@ -3,6 +3,7 @@ package com.mazen.flightreservation.controllers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mazen.flightreservation.entities.User;
 import com.mazen.flightreservation.repos.UserRepository;
+import com.mazen.flightreservation.services.SecurityService;
 
 @Controller
 public class UserController {
@@ -19,11 +21,17 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+
+	@Autowired
+	private SecurityService securityService;
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
 	@RequestMapping("/showReg")
 	public String showRegistrationPage() {
-		
+
 		LOGGER.info("showRegistrationPage() ");
 
 		return "login/registerUser";
@@ -43,6 +51,7 @@ public class UserController {
 
 		LOGGER.info("register() " + user);
 
+		user.setPassword(encoder.encode(user.getPassword()));
 		userRepository.save(user);
 		return "login/login";
 	}
@@ -53,9 +62,8 @@ public class UserController {
 
 		LOGGER.info("inside Login() -- email : " + email);
 
-		User user = userRepository.findByEmail(email);
-		if (user != null && password != null && !password.trim().equals("") && user.getPassword().equals(password)) {
-
+		boolean loginResponse = securityService.login(email, password);
+		if (loginResponse) {
 			return "findFlights";
 		} else {
 			LOGGER.info("inside Login()" + " user or password incorrect");
